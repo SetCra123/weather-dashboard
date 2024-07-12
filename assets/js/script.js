@@ -33,7 +33,7 @@ function getData(city) {
 
 function renderCurrentWeather(city, weather){
     
-    container.innerHTML = '';
+    // container.innerHTML = '';
     const cityName = weather.city.name;
     const temp = weather.list[0].main.temp;
     const wind = weather.list[0].wind.speed;
