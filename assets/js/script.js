@@ -19,6 +19,8 @@ function getData(city) {
     .then(data => {
         renderCurrentWeather(city, data);
         storeSearchHistory(city);
+        createHistoryButton();
+
     })
     
     
@@ -53,13 +55,13 @@ iconImg.setAttribute('src', iconurl);
 humidH1.textContent = `Humidity: ${humid}%`;
 container.append(iconImg, tempH1, windH1, humidH1);
 
-createHistoryButton();
+
 
 }
 function storeSearchHistory(city) {
     if (!storedCities.includes(city)) {
         storedCities.push(city);
-        localStorage.setItems('cities', JSON.stringify(storedCities));
+        localStorage.setItem('cities', JSON.stringify(storedCities));
     }
 
 }
